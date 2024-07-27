@@ -1,0 +1,7 @@
+language = "python"
+run = "python app.py"
+modules = ["python-3.10"]
+
+[[ports]]
+localPort = 8080
+externalPort = 80
