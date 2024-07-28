@@ -26,21 +26,21 @@ Jobs = [{
 
 @app.route('/')
 def greet():
-  return "<h3>This is Home</h3>"
+    return render_template('home.html')
 
 
 @app.route('/home')
 def home_joivan():
-  return render_template('home.html',
-                         debug=True,
-                         jobs=Jobs,
-                         company_name='Jovian')
+    return render_template('portal.html',
+                           debug=True,
+                           jobs=Jobs,
+                           company_name='Jovian')
 
 
-@app.route('api/jobs')
+@app.route('/api/jobs')
 def list_jobs():
-  return jsonify(Jobs)
+    return jsonify(Jobs)
 
 
 if __name__ == "__main__":
-  app.run(host='0.0.0.0', port=8080)
+    app.run(host='0.0.0.0', port=8080)
